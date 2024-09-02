@@ -11,6 +11,7 @@ html, body {
 
 header {
   background-color: lightcyan;
+  margin-bottom: 15px;
 }
 
 header > h1 {
@@ -19,19 +20,25 @@ header > h1 {
   color: darkcyan;
 }
 
-section, main {
+section {
   margin: 0 15px;
 }
 
 section > h2 {
-  /* border: 1px solid red; */
   margin: 0;
 }
 
-section > form {
+.main {
+  line-height: -50px;
+}
+
+.main--container > form {
   display: flex;
   justify-content: space-around;
-  padding: 15px;
+}
+
+.input--form {
+  margin: 15px 0;
 }
 
 .text--input {
@@ -77,10 +84,6 @@ button:active {
   gap: 5px;
   margin: 0 20px 8px;
   align-items: center;
-}
-
-.del {
-  display: none;
 }
 
 .list--header {

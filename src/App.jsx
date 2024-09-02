@@ -8,7 +8,6 @@ export default function App() {
     <div>
       <Header />
       <WriteTodo/>
-
     </div>
   )
 }
