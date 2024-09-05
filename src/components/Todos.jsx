@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import delete_btn from "../assets/delete_btn.svg"
 
 export default function Todos({todos, addTodo}) {
 	const [input, setInput] = useState("");
@@ -87,9 +88,9 @@ export default function Todos({todos, addTodo}) {
 								checked={todo.completed}
 							/>
 							<label htmlFor="completed">{todo.title}</label>
-							<button className="delete--btn" onClick={() => {
+							<img src={delete_btn} className="delete--btn" onClick={() => {
 								removeTodo(index);
-							}}>Delete</button>
+							}}/>
 						</div>
 					)
 				})
