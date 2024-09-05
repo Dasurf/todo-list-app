@@ -75,6 +75,28 @@ button {
 
 .delete--btn:hover {
   background-color: red;
+  transition: .2s ease-in-out;
+}
+
+.del--completed--btn, .del--all--btn {
+  padding: 3px;
+  border: 1px solid darkcyan;
+  color: darkcyan;
+  border-radius: 5px;
+  display: none;
+  margin: 5px;
+}
+
+.del--completed--btn:hover, .del--all--btn:hover {
+   border: 1px solid white;
+   color: white;
+   background-color: red;
+   transition: .4s ease-in-out;
+   cursor: pointer;
+}
+
+.show--btn {
+  display: inline-block;
 }
 
 

@@ -58,6 +58,15 @@ export default function Todos({todos, addTodo}) {
 			return newTodos;
 		})
 	}
+
+	function deleteCompletedTodos() {
+		const remainingTtodos = todos.filter(todo => !todo.completed)
+		addTodo(remainingTtodos);
+	}
+
+	function deleteAllTodos() {
+		addTodo([]);
+	}
 	
 	return (
 		<div className="main--container">
@@ -75,6 +84,13 @@ export default function Todos({todos, addTodo}) {
 				<button onClick={handleClick}>Add</button>
 			</form>
 			<h2>Todos</h2>
+			<div className={`del--completed--btn ${todos.length > 0 && "show--btn"}`} onClick={deleteCompletedTodos}>
+				Delete completed todos
+			</div>
+			<div className={`del--all--btn ${todos.length > 0 && "show--btn"}`} onClick={deleteAllTodos}>
+				Delete all
+			</div>
+
 			{
 				todos.length !== 0
 				?
