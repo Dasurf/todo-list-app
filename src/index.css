@@ -12,6 +12,8 @@ html, body {
 header {
   background-color: lightcyan;
   margin-bottom: 15px;
+  box-shadow: 2px 2px 10px rgba(131, 212, 212, 0.5);
+  /* opacity: 40%; */
 }
 
 header > h1 {
