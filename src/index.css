@@ -101,6 +101,10 @@ button {
   display: inline-block;
 }
 
+input[type=checkbox] {
+  white-space: nowrap;
+}
+
 .output {
   display: flex;
   gap: 5px;
