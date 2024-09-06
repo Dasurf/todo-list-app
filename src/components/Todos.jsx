@@ -60,12 +60,20 @@ export default function Todos({todos, addTodo}) {
 	}
 
 	function deleteCompletedTodos() {
-		const remainingTtodos = todos.filter(todo => !todo.completed)
-		addTodo(remainingTtodos);
+		addTodo(prev => {
+			const newTodos = [...prev];
+			const remainingTodos = newTodos.filter(todo => !todo.completed);
+			
+			return remainingTodos;
+		});
 	}
 
 	function deleteAllTodos() {
-		addTodo([]);
+		let newTodos;
+		addTodo(prev => {
+			newTodos = [...prev];
+			return newTodos = [];
+		});
 	}
 	
 	return (
