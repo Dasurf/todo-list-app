@@ -109,10 +109,14 @@ button {
   flex-wrap: nowrap;
 }
 
+input[type=checkbox] {
+  height: 10px;
+  width: 10px;
+}
+
 .output label {
   font-size: 1rem;
   line-height: 1.1;
-  white-space: nowrap;
 }
 
 .list--header {
