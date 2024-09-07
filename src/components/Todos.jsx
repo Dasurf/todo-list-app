@@ -3,53 +3,51 @@ import delete_btn from "../assets/delete_btn.svg"
 
 export default function Todos({todos, addTodo}) {
 	const [input, setInput] = useState("");
-
-
+	
+	
 	function handleChange(event) {        
 		const {value} = event.target;
-
+		
 		setInput(value);
 	}
 	console.log(input);
-
-	function handleClick(event) {
 	
+	function handleClick(event) {
 		event.preventDefault();
 		console.log("handleClick called");
-
+		
 		addTodo(prev => {
 			if (input === "") {
-				return [...prev]
+				return [...prev];
 			}
 			else {
 				return [
-				...prev,
-				{
-					id: crypto.randomUUID(),
-					title: input,
-					completed: false
-				}
-			]
+					...prev,
+					{
+						id: crypto.randomUUID(),
+						title: input,
+						completed: false
+					}
+				]
 			} 
 		})
-
+		
 		setInput("");
 		// console.log(todos);
 	}
-
+	
 	function toggleTodo(id, completed) {
 		addTodo(prev => {
 			return prev.map(todo => {
 				if (todo.id === id) {
-				   return {...todo, completed};
+					return {...todo, completed};
 				} 
 				
 				return todo;
 			})
 		})
 	}
-
-
+	
 	function removeTodo(index) {
 		addTodo(prev => {
 			const newTodos = [...prev];
@@ -58,7 +56,7 @@ export default function Todos({todos, addTodo}) {
 			return newTodos;
 		})
 	}
-
+	
 	function deleteCompletedTodos() {
 		addTodo(prev => {
 			const newTodos = [...prev];
@@ -75,20 +73,24 @@ export default function Todos({todos, addTodo}) {
 			return newTodos = [];
 		});
 	}
+
 	
 	return (
 		<div className="main--container">
 			<h2>New Item</h2>
 			<form className="input--form">
-				<input
-					id="item"
-					className="text--input"
-					name="textInput"
-					type="text"
-					placeholder="Enter Todo"
-					onChange={handleChange}
-					value={input}
-				/>
+				<div className={`text--input--container`}>
+					<p className={`${input === "" ? "display--message empty--text--field--alert" : "display--message"}`}>field cannot be empty</p>
+					<input
+						id="item"
+						className="text--input"
+						name="textInput"
+						type="text"
+						placeholder="Enter Todo"
+						onChange={handleChange}
+						value={input}
+					/>
+				</div>
 				<button onClick={handleClick}>Add</button>
 			</form>
 			<h2>Todos</h2>

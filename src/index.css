@@ -43,6 +43,29 @@ section > h2 {
   margin: 15px 0;
 }
 
+.text--input--container {
+  position: relative;
+}
+
+.display--message {
+  display: none;
+  position: absolute;
+  top: -15px;
+  right: 10px;
+  background-color: red;
+  color: white;
+  padding: 3px;
+  border-radius: 5px;
+  font-weight: 100;
+  font-style: italic;
+  font-size: x-small;
+}
+
+.empty--text--field--alert {
+  display: block;
+}
+
+
 .text--input {
   width: 1200px;
   font-size: 1rem;
@@ -63,10 +86,15 @@ button {
   color: darkcyan;
   background-color: lightcyan;
   border: 1px solid darkcyan;
-  font-size: medium;
-  font-weight: bold;
+  font-size: 12px;
+  font-weight: bolder;
   cursor: pointer;
   border-radius: 5px;
+}
+
+button:active {
+  background-color: darkcyan;
+  color: white;
 }
 
 .delete--btn {
