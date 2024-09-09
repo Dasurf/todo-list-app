@@ -1,9 +1,13 @@
 import React, {useState} from "react";
 import delete_btn from "../assets/delete_btn.svg"
 
+
+
 export default function Todos({todos, addTodo}) {
 	const [input, setInput] = useState("");
-	
+	const width = window.innerWidth;
+
+// console.log(width);
 	
 	function handleChange(event) {        
 		const {value} = event.target;
@@ -94,12 +98,12 @@ export default function Todos({todos, addTodo}) {
 				<button onClick={handleClick}>Add</button>
 			</form>
 			<h2>Todos</h2>
-			<div className={`del--completed--btn ${todos.length > 0 && "show--btn"}`} onClick={deleteCompletedTodos}>
+			<button className={`del--completed--btn ${todos.length > 0 && "show--btn"}`} onClick={deleteCompletedTodos}>
 				Delete completed todos
-			</div>
-			<div className={`del--all--btn ${todos.length > 0 && "show--btn"}`} onClick={deleteAllTodos}>
+			</button>
+			<button className={`del--all--btn ${todos.length > 0 && "show--btn"}`} onClick={deleteAllTodos}>
 				Delete all
-			</div>
+			</button>
 
 			{
 				todos.length !== 0

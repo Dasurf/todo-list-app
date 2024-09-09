@@ -13,7 +13,6 @@ header {
   background-color: lightcyan;
   margin-bottom: 15px;
   box-shadow: 2px 2px 10px rgba(131, 212, 212, 0.5);
-  /* opacity: 40%; */
 }
 
 header > h1 {
@@ -30,21 +29,21 @@ section > h2 {
   margin: 0;
 }
 
-.main {
+.main--container {
   line-height: -50px;
-}
-
-.main--container > form {
-  display: flex;
-  justify-content: space-around;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .input--form {
+  display: flex;
+  justify-content: space-around;
   margin: 15px 0;
 }
 
 .text--input--container {
   position: relative;
+  width: 85%;
 }
 
 .display--message {
@@ -65,9 +64,8 @@ section > h2 {
   display: block;
 }
 
-
 .text--input {
-  width: 1200px;
+  width: 100%;
   font-size: 1rem;
   padding: 7px;
   border: 2px solid darkcyan;
@@ -154,4 +152,29 @@ input[type=checkbox] {
 
 .no--todos {
   text-align: center;
+}
+
+/* Responsiveness for smaller screens */
+
+@media only screen and (max-width: 700px) {
+  .input--form {
+    flex-direction: column;
+    /* width: 100%; */
+    margin: 0;
+    gap: 10px;
+  }
+
+  .text--input--container {
+    width: 100%;
+  }
+
+  .display--message {
+    padding: 2px;
+    font-size: xx-small;
+    top: -12px;
+  }
+
+  .output > label {
+    font-size: .8rem;
+  }
 }
